@@ -1,0 +1,12 @@
+body {
+    margin: 3em
+}
+
+button {
+    cursor: pointer;
+}
+
+.unit-price {
+    margin-right: 2rem;
+    color: #999;
+}

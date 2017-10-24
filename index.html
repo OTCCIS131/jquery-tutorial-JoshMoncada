@@ -1,28 +1,80 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8">
-
+    	<meta charset="UTF-8">
+		<title>jQuery tutorial</title>
+		
 		<!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-		<!-- Latest compiled and minified JavaScript -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+		<link rel="stylesheet" href="stylesheet.css">
 	</head>
-	<body>      
-	  	<!-- Page content -->
-        <div class="container" id="app">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3  class="panel-title">Shopping Cart</h3>
 
-                </div>
+	<body>
+	    <div class="container" id="app">
+    	    <form>
+        	    <!-- A placeholder for the list of attendee inputs -->
+            	<div class="attendee-list"></div>
+            	<div class="row justify-content-center">
+                	<div class="col-sm-6"></div>
+                	<div class="col-sm-2">
+                    	<button type="button" class="btn btn-secondary add-attendee">Add Attendee</button>
+                	</div>
+            	</div>
+            	<hr>
+            	<div class="row justify-content-center">
+                	<div class="col-sm-6">
+                    	<!-- A placeholder for the unit price -->
+                    	<span id="unit-price" class="unit-price"></span>
+                	</div>
+                	<div class="col-sm-2 text-left">
+                    	<button type="submit" id="checkout-button" class="btn btn-primary">
+                        	Pay
+                        	<!-- A placeholder for the checkout total -->
+							<span class="amount"></span>
+						</button>
+                	</div>
+            	</div>
+        	</form>
+    	</div>
 
-            
-            </div>
-        </div>
-        
-        
-	  	<!-- Link to a JavaScript file -->
-  		<script src="index.js"></script>
+	    <script type="text/template" data-template="attendee">
+    	    <div class="attendee row justify-content-center">
+				
+				<div class="col-sm-3">
+            	    <div class="form-group">
+                	<label class="sr-only">Name</label>
+	                <input 
+    	                class="form-control"
+        	            placeholder="Enter name"
+            	        name="attendees[][name]"
+                	    required>
+    	            </div>
+        	    </div>
+				
+				<div class="col-sm-3">
+            	    <div class="form-group">
+            	    <label class="sr-only">Email address</label>
+            	    <input
+            	        type="email"
+            	        class="form-control"
+            	        placeholder="Enter email"
+            	        name="attendees[][email]"
+            	        required>
+            	    </div>
+            	</div>
+				
+				<div class="col-sm-2 text-left">
+            	    <button type="button" class="btn btn-light remove-attendee">
+						     <span aria-hidden="true">×</span> Remove
+                	</button>
+            	</div>
+			
+			</div>
+    	</script>
+
+		<!-- Link to jQuery -->
+    	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+		<!-- Link to local js file -->
+		<script src="index.js"></script>
 	</body>
 </html>
